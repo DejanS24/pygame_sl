@@ -23,7 +23,8 @@ setup(
     include_package_data=True,
     install_requires=[
         'textX',
-        'Jinja2'
+        'Jinja2',
+        'pygame'
     ],
     zip_safe=False,
     entry_points={

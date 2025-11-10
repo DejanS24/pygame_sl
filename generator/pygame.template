@@ -296,7 +296,7 @@ class Level(object):
         if self.background:
           screen.blit(self.background, (0, 0))
         else:
-          screen.f(BLUE)
+          screen.fill(BLUE)
 
         # Draw all the sprite lists that we have
         self.platform_list.draw(screen)
