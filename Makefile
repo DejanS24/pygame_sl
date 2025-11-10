@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test test-unit test-integration coverage format lint type-check clean build docs
+.PHONY: help install install-dev test test-unit test-integration coverage format lint type-check clean build docs watch
 
 help:  ## Show this help message
 	@echo 'Usage: make [target]'
@@ -104,6 +104,14 @@ example:  ## Generate code from example game
 	textx generate examples/game1.pg --target python
 	@echo ""
 	@echo "✓ Generated game file! Run with: python 2d_platformer.py"
+
+watch:  ## Watch a .pg file and auto-regenerate on changes
+	@if [ -z "$(FILE)" ]; then \
+		echo "Usage: make watch FILE=path/to/game.pg"; \
+		echo "Example: make watch FILE=examples/simple_platformer.pg"; \
+	else \
+		python watch.py $(FILE); \
+	fi
 
 pre-commit:  ## Install pre-commit hooks
 	pre-commit install
