@@ -1,0 +1,164 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pygame_sl"
+dynamic = ["version"]
+description = "A DSL for generating python games using pygame library"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Dejan Sorgic", email = "dejans1224@gmail.com"}
+]
+keywords = ["dsl", "textx", "pygame", "game-development", "code-generation", "platformer"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Games/Entertainment",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "textX>=3.0.0",
+    "Jinja2>=3.0.0",
+    "pygame>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/DejanS24/pygame_sl"
+Documentation = "https://github.com/DejanS24/pygame_sl/tree/main/docs"
+Repository = "https://github.com/DejanS24/pygame_sl"
+"Bug Tracker" = "https://github.com/DejanS24/pygame_sl/issues"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | outputs
+)/
+'''
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+# Enable pycodestyle (E), Pyflakes (F), and isort (I)
+select = ["E", "F", "I", "W"]
+ignore = [
+    "E501",  # Line too long (handled by black)
+]
+
+# Exclude a variety of commonly ignored directories
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "outputs",
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]  # Allow unused imports in __init__.py
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+module = [
+    "textx.*",
+    "jinja2.*",
+    "pygame.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--cov=lang",
+    "--cov=generator",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+    "--cov-fail-under=70",
+    "-v"
+]
+markers = [
+    "unit: Unit tests for individual components",
+    "integration: Integration tests for end-to-end workflows",
+]
+
+[tool.coverage.run]
+source = ["lang", "generator"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/venv/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
