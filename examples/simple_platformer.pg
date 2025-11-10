@@ -1,0 +1,122 @@
+game "Simple Platformer"
+
+"A beginner-friendly platformer - perfect for learning!"
+
+player {
+    color blue
+    height 75
+    width 50
+}
+
+point star {
+    color yellow
+}
+
+level Level1 {
+    background color cyan
+
+    // Ground
+    platform {
+        position 0 550
+        height 50
+        width 800
+    }
+
+    // Simple floating platform
+    platform {
+        position 300 420
+        height 30
+        width 200
+    }
+
+    // Place a collectible
+    point star {
+        position 380 350
+    }
+}
+
+level Level2 {
+    background color green
+
+    // Ground with gap
+    platform {
+        position 0 550
+        height 50
+        width 300
+    }
+
+    platform {
+        position 400 550
+        height 50
+        width 400
+    }
+
+    // Jump across gap
+    platform {
+        position 180 450
+        height 30
+        width 120
+    }
+
+    platform {
+        position 480 450
+        height 30
+        width 120
+    }
+
+    // Rewards for jumping
+    point star {
+        position 210 380
+    }
+
+    point star {
+        position 510 380
+    }
+}
+
+level Level3 {
+    background color yellow
+
+    platform {
+        position 0 550
+        height 50
+        width 800
+    }
+
+    // Staircase
+    platform {
+        position 200 480
+        height 35
+        width 100
+    }
+
+    platform {
+        position 350 410
+        height 35
+        width 100
+    }
+
+    platform {
+        position 500 340
+        height 35
+        width 100
+    }
+
+    // Treasure at the top
+    point star {
+        position 230 410
+    }
+
+    point star {
+        position 380 340
+    }
+
+    point star {
+        position 530 270
+    }
+}
+
+settings {
+    title "Simple Platformer"
+    fps 60
+}

@@ -1,0 +1,211 @@
+game "Adventure Quest"
+
+"A complete adventure game using only colors - no assets required!"
+
+player {
+    color blue
+    height 75
+    width 50
+}
+
+point coins {
+    color yellow
+}
+
+point gems {
+    color red
+}
+
+boost speedPotion {
+    color green
+}
+
+level Forest {
+    background color cyan
+
+    // Ground platforms
+    platform {
+        position 0 550
+        height 50
+        width 300
+    }
+
+    platform {
+        position 400 550
+        height 50
+        width 400
+    }
+
+    // Floating platforms
+    platform {
+        position 250 450
+        height 30
+        width 120
+    }
+
+    platform {
+        position 500 380
+        height 30
+        width 100
+    }
+
+    // Collectibles
+    point coins {
+        position 280 380
+    }
+
+    point coins {
+        position 530 310
+    }
+
+    boost speedPotion {
+        position 650 480
+    }
+}
+
+level Cave {
+    background color black
+
+    platform {
+        position 0 550
+        height 50
+        width 250
+    }
+
+    platform {
+        position 300 550
+        height 50
+        width 500
+    }
+
+    platform {
+        position 180 460
+        height 30
+        width 100
+    }
+
+    platform {
+        position 350 390
+        height 30
+        width 120
+    }
+
+    platform {
+        position 550 320
+        height 30
+        width 100
+    }
+
+    point coins {
+        position 210 390
+    }
+
+    point gems {
+        position 380 320
+    }
+
+    point gems {
+        position 580 250
+    }
+}
+
+level Castle {
+    background color red
+
+    platform {
+        position 0 550
+        height 50
+        width 200
+    }
+
+    platform {
+        position 250 550
+        height 50
+        width 150
+    }
+
+    platform {
+        position 450 550
+        height 50
+        width 350
+    }
+
+    // Staircase pattern
+    platform {
+        position 150 480
+        height 35
+        width 100
+    }
+
+    platform {
+        position 300 410
+        height 35
+        width 100
+    }
+
+    platform {
+        position 450 340
+        height 35
+        width 100
+    }
+
+    platform {
+        position 600 270
+        height 40
+        width 150
+    }
+
+    // Place treasures
+    point coins {
+        position 180 410
+    }
+
+    point coins {
+        position 330 340
+    }
+
+    point gems {
+        position 480 270
+    }
+
+    point gems {
+        position 650 200
+    }
+
+    boost speedPotion {
+        position 100 480
+    }
+}
+
+level Victory {
+    background color yellow
+
+    platform {
+        position 0 550
+        height 50
+        width 800
+    }
+
+    platform {
+        position 350 420
+        height 40
+        width 100
+    }
+
+    // Final treasures
+    point gems {
+        position 370 350
+    }
+
+    point gems {
+        position 400 350
+    }
+}
+
+settings {
+    title "Adventure Quest - Color Edition"
+    fps 60
+    screen width 800
+    screen height 600
+    movespeed 7
+}
