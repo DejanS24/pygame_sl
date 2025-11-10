@@ -11,3 +11,7 @@ ruff>=0.1.0
 
 # Type checking
 mypy>=1.0.0
+
+# Security
+bandit[toml]>=1.7.0
+safety>=2.3.0
