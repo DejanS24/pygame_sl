@@ -1,0 +1,363 @@
+game "Advanced Platforming Challenge"
+
+"Complex level design demonstrating advanced platforming techniques"
+
+player {
+    color blue
+    height 75
+    width 50
+}
+
+point diamond {
+    color red
+}
+
+point coin {
+    color yellow
+}
+
+boost speedBoost {
+    color green
+}
+
+level TheGap {
+    background color black
+
+    // Large gap challenge
+    platform {
+        position 0 550
+        height 50
+        width 200
+    }
+
+    platform {
+        position 600 550
+        height 50
+        width 200
+    }
+
+    // Stepping stones across the gap
+    platform {
+        position 230 480
+        height 25
+        width 60
+    }
+
+    platform {
+        position 340 450
+        height 25
+        width 60
+    }
+
+    platform {
+        position 450 420
+        height 25
+        width 60
+    }
+
+    // Reward for crossing
+    point diamond {
+        position 250 410
+    }
+
+    point diamond {
+        position 360 380
+    }
+
+    point diamond {
+        position 470 350
+    }
+
+    boost speedBoost {
+        position 50 480
+    }
+}
+
+level TheTower {
+    background color blue
+
+    // Ground
+    platform {
+        position 0 550
+        height 50
+        width 250
+    }
+
+    platform {
+        position 550 550
+        height 50
+        width 250
+    }
+
+    // Vertical tower climb
+    platform {
+        position 300 480
+        height 30
+        width 100
+    }
+
+    platform {
+        position 400 420
+        height 30
+        width 100
+    }
+
+    platform {
+        position 300 360
+        height 30
+        width 100
+    }
+
+    platform {
+        position 400 300
+        height 30
+        width 100
+    }
+
+    platform {
+        position 300 240
+        height 30
+        width 100
+    }
+
+    // Treasures up the tower
+    point coin {
+        position 330 410
+    }
+
+    point coin {
+        position 430 350
+    }
+
+    point diamond {
+        position 330 290
+    }
+
+    point diamond {
+        position 330 170
+    }
+}
+
+level TheRace {
+    background color red
+
+    // Speed challenge - continuous platforms
+    platform {
+        position 0 550
+        height 50
+        width 150
+    }
+
+    platform {
+        position 180 550
+        height 50
+        width 150
+    }
+
+    platform {
+        position 360 550
+        height 50
+        width 150
+    }
+
+    platform {
+        position 540 550
+        height 50
+        width 260
+    }
+
+    // Quick jumps required
+    platform {
+        position 150 480
+        height 25
+        width 80
+    }
+
+    platform {
+        position 330 480
+        height 25
+        width 80
+    }
+
+    platform {
+        position 510 480
+        height 25
+        width 80
+    }
+
+    // Speed boosts for the race
+    boost speedBoost {
+        position 50 480
+    }
+
+    boost speedBoost {
+        position 650 480
+    }
+
+    // Coins along the way
+    point coin {
+        position 180 410
+    }
+
+    point coin {
+        position 360 410
+    }
+
+    point coin {
+        position 540 410
+    }
+}
+
+level TheLabyrinth {
+    background color green
+
+    // Complex maze-like structure
+    platform {
+        position 0 550
+        height 50
+        width 800
+    }
+
+    platform {
+        position 100 480
+        height 30
+        width 150
+    }
+
+    platform {
+        position 350 480
+        height 30
+        width 100
+    }
+
+    platform {
+        position 550 480
+        height 30
+        width 150
+    }
+
+    platform {
+        position 200 410
+        height 30
+        width 120
+    }
+
+    platform {
+        position 450 410
+        height 30
+        width 120
+    }
+
+    platform {
+        position 100 340
+        height 30
+        width 100
+    }
+
+    platform {
+        position 300 340
+        height 30
+        width 150
+    }
+
+    platform {
+        position 550 340
+        height 30
+        width 100
+    }
+
+    platform {
+        position 200 270
+        height 30
+        width 300
+    }
+
+    // Hidden treasures
+    point diamond {
+        position 130 270
+    }
+
+    point diamond {
+        position 480 340
+    }
+
+    point diamond {
+        position 250 340
+    }
+
+    point coin {
+        position 230 340
+    }
+
+    point coin {
+        position 480 270
+    }
+
+    point coin {
+        position 350 200
+    }
+}
+
+level TheFinal {
+    background color yellow
+
+    // Final challenge - precision jumping
+    platform {
+        position 0 550
+        height 50
+        width 120
+    }
+
+    // Narrow platforms
+    platform {
+        position 180 490
+        height 30
+        width 70
+    }
+
+    platform {
+        position 310 440
+        height 30
+        width 70
+    }
+
+    platform {
+        position 440 390
+        height 30
+        width 70
+    }
+
+    platform {
+        position 570 340
+        height 30
+        width 70
+    }
+
+    // Final platform
+    platform {
+        position 680 280
+        height 60
+        width 120
+    }
+
+    // Ultimate reward
+    point diamond {
+        position 710 210
+    }
+
+    point diamond {
+        position 740 210
+    }
+
+    boost speedBoost {
+        position 40 480
+    }
+}
+
+settings {
+    title "Advanced Platforming Challenge"
+    fps 60
+    screen width 800
+    screen height 600
+    movespeed 8
+}
