@@ -2,8 +2,12 @@ game "Test igrica 12"
 
 "Ovo je igrica platformemem la"
 
+// NOTE: Replace asset paths with your own image files.
+// Use relative paths: "assets/players/sprite.png"
+// Or use color-based graphics: player { color blue height 80 width 40 }
+
 player {
-  image "C:/Users/Dejan/Pictures/spriteTest3.PNG"
+  image "assets/players/sprite.png"
   height 80
   width 40
 }
@@ -17,10 +21,10 @@ point one {
 }
 
 level Level1 {
-  background image "C:/Users/Dejan/Pictures/game_background12.jpg"
+  background image "assets/backgrounds/game_background1.jpg"
   platform {
     position 420 210
-    texture image "C:/Users/Dejan/Pictures/Backgrounds/11louisenadeau-springrain.jpg"
+    texture image "assets/platforms/spring_rain.jpg"
     height 100
     width 370
   }
@@ -30,7 +34,7 @@ level Level1 {
 }
 
 level Level2 {
-  background image "C:/Users/Dejan/Pictures/game_background13.jpg"
+  background image "assets/backgrounds/game_background2.jpg"
   platform {
     position 420 415
     height 100

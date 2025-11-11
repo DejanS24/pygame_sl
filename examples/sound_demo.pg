@@ -1,0 +1,114 @@
+game "Sound Demo Game"
+
+"Demonstrates sound and music features - create audio files or use colors only"
+
+// Note: This example shows sound syntax. To actually hear sounds:
+// 1. Create or find audio files (MP3, WAV, OGG)
+// 2. Place them in an assets/sounds/ directory
+// 3. Or comment out the sound section to run without audio
+
+player {
+    color blue
+    height 75
+    width 50
+}
+
+point musicNote {
+    color yellow
+}
+
+boost energyDrink {
+    color green
+}
+
+level MusicLevel1 {
+    background color cyan
+
+    platform {
+        position 0 550
+        height 50
+        width 800
+    }
+
+    platform {
+        position 250 450
+        height 30
+        width 150
+    }
+
+    platform {
+        position 500 370
+        height 30
+        width 150
+    }
+
+    // Collect notes to hear sound
+    point musicNote {
+        position 300 380
+    }
+
+    point musicNote {
+        position 550 300
+    }
+
+    boost energyDrink {
+        position 650 480
+    }
+}
+
+level MusicLevel2 {
+    background color purple
+
+    platform {
+        position 0 550
+        height 50
+        width 300
+    }
+
+    platform {
+        position 400 550
+        height 50
+        width 400
+    }
+
+    platform {
+        position 200 450
+        height 30
+        width 120
+    }
+
+    platform {
+        position 450 380
+        height 30
+        width 120
+    }
+
+    point musicNote {
+        position 230 380
+    }
+
+    point musicNote {
+        position 480 310
+    }
+
+    boost energyDrink {
+        position 100 480
+    }
+}
+
+// Sound configuration - create these files or comment out this section
+sound {
+    game music "assets/sounds/background_music.mp3"
+    jump sound "assets/sounds/jump.wav"
+    boost sound "assets/sounds/powerup.wav"
+    point sound "assets/sounds/coin.wav"
+    end music "assets/sounds/victory.mp3"
+}
+
+settings {
+    title "Sound Demo - pygame_sl"
+    fps 60
+    screen width 800
+    screen height 600
+    movespeed 7
+}
